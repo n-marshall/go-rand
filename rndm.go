@@ -1,4 +1,4 @@
-package rand
+package rndm
 
 import (
 	"math/rand"
@@ -9,7 +9,7 @@ var (
 	chars = "1234567890QWERTYUIOPMLKJHGFDSAZXCVBNqwertyuiopmlkjhgfdsazxcvbn"
 )
 
-func RandBytes(length int) []byte {
+func Bytes(length int) []byte {
 	rand.Seed(time.Now().UTC().UnixNano())
 	result := make([]byte, length)
 	for i := 0; i < length; i++ {
@@ -18,6 +18,6 @@ func RandBytes(length int) []byte {
 	return result
 }
 
-func RandString(length int) string {
-	return string(RandBytes(length))
+func String(length int) string {
+	return string(Bytes(length))
 }
